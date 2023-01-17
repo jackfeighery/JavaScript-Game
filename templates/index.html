@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>CA2</title>
+        <script src="{{ url_for('static', filename='ca2.js') }}" type="module"></script>
+        <link href="{{ url_for('static', filename='ca2.css') }}" rel="stylesheet">
+    </head>
+    <header>
+    <h1>Greedy Wizard</h1>
+    <nav>
+        <ul>
+            {% if g.user %}
+                <p>Hi {{ g.user }} !</p>
+                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            {% else %}
+                <li><a href="{{ url_for('register') }}">Register</a></li>
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+            {% endif %}
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+        </ul>   
+    </nav>
+    </header>
+    <body>
+
+        <p>
+            <a href="{{ url_for('greedy_wizard') }}">PLAY</a>
+        </p>
+        <p><a href = "{{ url_for('leaderboard') }}">Leaderboard</a></p>
+
+        <div>
+            <p class="instructions">
+                You are a old yet greedy wizard who needs his fix of cash. You are in the well-guarded Kump dungeon. Your goal is to take as much coins as possible, while also 
+                trying to make it to the next round. To make it no the next round head to the door on the top right.
+            </p>
+            <p class="instructions"> As the rounds increase the amount of coins increase, but so does the number of Kumps !
+                So be cautious.
+            </p>
+            <p class="instructions"> A hidden power up - On round 2 there will be a secret power up that spawns, if you find it it will make
+                the wizard invincible and quicker! Your score will not be added to leaderboard if picked up.
+            </p>
+        </div>
+
+        <footer>
+            <p>CA2 - Jack Feigehry</p>
+            <p>Background music from ShabobaX. Link below.</p>
+            <p><a  href="https://soundcloud.com/shabobax">ShabobaX soundcloud</a></p>
+        </footer>
+
+    </body>
+</html>

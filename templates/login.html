@@ -1,0 +1,35 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>CA2</title>
+        <script src="{{ url_for('static', filename='ca2.js') }}" type="module"></script>
+        <link href="{{ url_for('static', filename='ca2.css') }}" rel="stylesheet">
+    </head>
+    <body>
+
+        <form action="" method="post" novalidate>
+            <div>
+                {{ form.hidden_tag() }}
+                {{ form.user_id.label }}
+                {{ form.user_id() }}
+                {% for error in form.user_id.errors %}
+                    {{ error }}
+                {% endfor %}
+            </div>
+            <div>
+                {{ form.pw.label }}
+                {{ form.pw() }}
+                {% for error in form.pw.errors %}
+                    {{ error }}
+                {% endfor %}
+            </div>
+            <div class="submit">
+                {{ form.submit() }}
+            </div>
+        </form>
+
+    </body>
+</html>

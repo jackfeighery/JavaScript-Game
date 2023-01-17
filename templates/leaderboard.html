@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>CA2</title>
+        <script src="{{ url_for('static', filename='ca2.js') }}" type="module"></script>
+        <link href="{{ url_for('static', filename='ca2.css') }}" rel="stylesheet">
+    </head>
+    <header>
+    <nav>
+        <h1>Leaderboard</h1>
+        <ul>
+            {% if g.user %}
+                <p>Hi {{ g.user }} !</p>
+                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            {% else %}
+                <li><a href="{{ url_for('register') }}">Register</a></li>
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+            {% endif %}
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+        </ul>   
+    </nav>
+</header>
+    <body>
+        <table>
+            <tr>
+                <th>User</th>
+                <th>Score</th>
+            </tr>
+            {% for score in scores %}
+                <tr>
+                    <td>{{ score["user"] }}</td>
+                    <td>{{ score["score"] }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>

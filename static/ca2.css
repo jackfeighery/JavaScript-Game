@@ -1,0 +1,73 @@
+canvas {
+    background-color: black;
+    display: block;
+    
+    /* if want to resize get rid of margin */
+    /* margin: 1em auto;  */
+
+}
+
+
+body {
+    margin: 0;
+    /* overflow: hidden; */
+    background-color: #070d30;
+    color: aliceblue;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+li {
+    list-style: none;
+}
+
+a{
+    border:3px solid lightblue;
+    padding:0.2em;
+    background-color: var(--h1-hover);
+    text-decoration: none;
+    color: aliceblue;
+}
+
+form{
+    padding: 3em;
+}
+nav a {
+    float: right;
+    margin-right: 1em;
+}
+
+h1{
+    text-align: center;
+    float: left;
+    margin-left: 1em;
+    color: var(--small-text-color);
+}
+
+header {
+    padding: 3em;
+    margin-bottom: 8em;
+}
+table {
+    padding: 2em;
+    margin-left:20% ;
+    margin-right: 50%;
+    width: 60%;
+}
+.instructions {
+    width: 65%;
+    padding: 2em;
+    margin-left: 10%;
+}
+    
+div {
+    background-image: linear-gradient(to bottom, rgba(105, 105, 105, .4), rgba(105, 105, 105, .4)), url('indbg.png');
+    background-size: cover;
+    padding: 4em;
+    margin-bottom: 3em;
+}
+
+footer {
+    background-color: black;
+    font-size: 0.5em;
+    padding: 3em;
+}
