@@ -12,6 +12,9 @@ app.config["SESSION_PERMANENT"] = False
 app.config ["SESSION_TYPE"] = "filesystem"
 Session(app)
 
+if __name__ == "__main__":
+    app.run(debug=False, host='0.0.0.0')
+
 @app.before_request
 def load_logged_in_user():
     g.user = session.get("user_id", None)
@@ -96,4 +99,3 @@ def login():
 def logout():
     session.clear()
     return redirect( url_for("index") )
-
