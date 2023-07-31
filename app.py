@@ -7,9 +7,9 @@ from forms import RegistrationForm, LoginForm
 
 app = Flask(__name__)
 app.teardown_appcontext(close_db)
-app.config["SECRET_KEY"] = "banana"
-app.config["SESSION_PERMANENT"] = False
-app.config ["SESSION_TYPE"] = "filesystem"
+# app.config["SECRET_KEY"] = "banana"
+# app.config["SESSION_PERMANENT"] = False
+# app.config ["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 if __name__ == "__main__":
